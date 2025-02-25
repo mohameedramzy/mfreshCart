@@ -66,7 +66,9 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/checkout/checkout.component').then(m => m.CheckoutComponent),
     title: 'checkout',
     canActivate: [authGuard],  // Require login for products
-    },
+    
+  data: { renderMode: 'default' }
+  },
     {
     path: 'allorders', 
     loadComponent: () => import('./pages/allorders/allorders.component').then(m => m.AllordersComponent),
@@ -84,6 +86,7 @@ export const routes: Routes = [
       loadComponent: () => import('./pages/detailas/detailas.component').then(m => m.DetailasComponent),
       title: 'detailas',
       canActivate: [authGuard],  // Require login for products
+      data: { renderMode: 'default' }
     },
     { 
       path: '**', 
