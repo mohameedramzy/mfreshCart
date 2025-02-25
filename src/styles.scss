@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+
+
+:root{
+  --primary-color:#16a34a ;
+  --hover-primary-color:#107e38 ;
+}
+
+body{
+  background-image: url(/images/light-patten.svg);
+}
+
+
+
+.card{
+  button{
+    transform: translateY(100%);
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  img{
+    transition: all 0.5s;
+  }
+  &:hover{
+    button{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    img{
+      transform: scale(1.1);
+    }
+  }
+}
+.main-text::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 20px;
+  height: 30px;
+  background:var(--primary-color);
+  border-radius: 3px;
+}
+
+
+.active{
+  color: var(--primary-color);
+  font-size: larger;
+  font-weight: bold;
+}
+

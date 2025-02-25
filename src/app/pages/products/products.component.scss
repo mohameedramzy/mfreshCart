@@ -1,0 +1,30 @@
+.card{
+  button{
+    transform: translateY(100%);
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  img{
+    transition: all 0.5s;
+  }
+  &:hover{
+    button{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    img{
+      transform: scale(1.1);
+    }
+  }
+}
+.main-text::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 20px;
+  height: 30px;
+  background:var(--primary-color);
+  border-radius: 3px;
+}
+

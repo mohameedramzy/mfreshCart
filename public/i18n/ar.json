@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "التصنيفات",
+    "brands": "العلامات التجارية",
+    "orders": "الطلبات",
+    "logout" : "تسجيل الخروج",
+    "login" : "تسجيل الدخول",
+    "register" : "إنشاء حساب",
+    "lang": "اللغة"
+  },
+  "home": {
+    "ourCategories": "تصنيفاتنا",
+    "ourProducts": "منتجاتنا",
+    "exploar": "اكتشف منتجاتنا",
+    "search": "بحث",
+    "add": "أضف للسلة",
+    "view": "عرض كل المنتجات"
+  },
+  "footer": {
+    "get_app": "حمّل تطبيق FreshCart",
+    "app_description": "هنبعتلك رابط، افتحه على موبايلك علشان تحمّل التطبيق",
+    "email": "البريد الالكتروني",
+    "shareLink": "مشاركة رابط التطبيق",
+    "getDeliveries": "احصل على توصيلات مع FreshCart",
+    "partners": "شركاء الدفع",
+    "copyright": "حقوق النشر 2025 © بواسطة م.رمزي - جميع الحقوق محفوظة"
+  },
+  "login": {
+    "title": "سجّل دخولك الآن",
+    "email": "البريد الالكتروني",
+    "password": "كلمة السر",
+    "emailRequired": "البريد الالكتروني مطلوب",
+    "emailInvalid": "من فضلك أدخل عنوان إيميل صحيح.",
+    "passwordRequired": "كلمة السر مطلوبة",
+    "passwordUppercase": "كلمة السر لازم تبدأ بحرف كابيتال.",
+    "passwordLength": "كلمة السر لازم تكون على الأقل 8 حروف.",
+    "forgotPassword": "نسيت كلمة السر؟ اضغط هنا",
+    "signIn": "تسجيل الدخول"
+  },
+  "register": {
+    "title": "إنشاء حساب جديد",
+    "name": "الاسم",
+    "email": "البريد الالكتروني",
+    "password": "كلمة السر",
+    "repassword": "تأكيد كلمة السر",
+    "phone": "رقم الموبايل",
+    "nameRequired": "الاسم مطلوب",
+    "nameMinLength": "الاسم لازم يكون على الأقل 3 حروف.",
+    "nameMaxLength": "الاسم لا يمكن أن يتعدى 20 حرف.",
+    "emailRequired": "البريد الالكتروني مطلوب",
+    "emailInvalid": "من فضلك أدخل عنوان إيميل صحيح.",
+    "passwordRequired": "كلمة السر مطلوبة.",
+    "passwordUppercase": "كلمة السر لازم تبدأ بحرف كابيتال.",
+    "passwordLength": "كلمة السر لازم تكون على الأقل 8 حروف.",
+    "repasswordRequired": "من فضلك أكّد كلمة السر.",
+    "repasswordMismatch": "كلمات السر غير متطابقة.",
+    "phoneRequired": "رقم الموبايل مطلوب",
+    "phoneInvalid": "من فضلك أدخل رقم موبايل مصري صحيح.",
+    "phoneLength": "رقم الموبايل لازم يكون 11 رقم.",
+    "signUp": "إنشاء حساب"
+  },
+  "forgetPassword": {
+    "title": "نسيت كلمة السر",
+    "email": "البريد الالكتروني",
+    "emailRequired": "البريد الالكتروني مطلوب.",
+    "emailInvalid": "من فضلك أدخل عنوان إيميل صحيح.",
+    "confirm": "تأكيد",
+    "verify": "تحقق",
+    "codeRequired": "الكود مطلوب",
+    "codeInvalid": "من فضلك راجع البريد الالكتروني وأدخل الكود.",
+    "newPassword": "كلمة السر الجديدة",
+    "passwordRequired": "كلمة السر مطلوبة.",
+    "passwordUppercase": "كلمة السر لازم تبدأ بحرف كابيتال.",
+    "passwordLength": "كلمة السر لازم تكون على الأقل 8 حروف.",
+    "repasswordRequired": "من فضلك أكّد كلمة السر.",
+    "code": "الكود"
+  },
+  "cart": {
+    "cartTotal": "إجمالي السلة",
+    "total": "الإجمالي:",
+    "proceedToCheckout": "الانتقال للدفع",
+    "product": "المنتج",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "subTotal": "المجموع الفرعي"
+  },
+  "checkout": {
+    "title": "الدفع",
+    "phone": "رقم الموبايل",
+    "phoneRequired": "رقم الموبايل مطلوب.",
+    "phoneInvalid": "من فضلك أدخل رقم موبايل مصري صحيح.",
+    "phoneLength": "رقم الموبايل لازم يكون 11 رقم.",
+    "city": "المدينة",
+    "cityRequired": "المدينة مطلوبة.",
+    "details": "عنوان التفاصيل",
+    "detailsRequired": "العنوان مطلوب.",
+    "card": "بطاقة",
+    "cash": "كاش"
+  },
+  "orders": {
+    "title": "طلباتك",
+    "orderId": "رقم الطلب",
+    "date": "التاريخ",
+    "totalPrice": "إجمالي السعر",
+    "paymentMethod": "طريقة الدفع",
+    "paymentStatus": "حالة الدفع",
+    "notPaid": "لم يتم الدفع",
+    "Paid": "تم الدفع",
+    "customerInformation": "معلومات العميل",
+    "nameLabel": "الاسم",
+    "emailLabel": "البريد الالكتروني",
+    "phoneLabel": "رقم الموبايل",
+    "shippingAddress": "عنوان الشحن",
+    "detailsLabel": "التفاصيل:",
+    "orderedProducts": "المنتجات المطلوبة"
+  },
+  "details": {
+    "sold": "تم البيع",
+    "reviews": "التقييمات",
+    "addToCart": "أضف للسلة",
+    "category": "التصنيف",
+    "brand": "العلامة التجارية",
+    "freeDelivery": "توصيل مجاني خلال 3 أيام",
+    "enterPostalCode": "ادخل كودك البريدي للتحقق من التوفر",
+    "freeReturn": "إرجاع مجاني خلال 30 يوم"
+  },
+  "brands": {
+    "ourBrands": "علاماتنا التجارية"
+  },
+  "categories": {
+    "ourCategories": "تصنيفاتنا"
+  },
+  "products": {
+    "ourProducts": "منتجاتنا",
+    "search": "بحث",
+    "add": "أضف للسلة"
+  }
+}

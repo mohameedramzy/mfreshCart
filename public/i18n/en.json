@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "orders": "Orders",
+    "logout" : "Logout",
+    "login" : "Login",
+    "register" : "Register",
+    "lang": "Language"
+  },
+  "home": {
+    "ourCategories": "Our categories",
+    "ourProducts": "Our products",
+    "exploar": "Explore Our Products",
+    "search": "Search",
+    "add": "Add to cart",
+    "view": "View All Products"
+  },
+  "footer": {
+    "get_app": "Get The FreshCart App",
+    "app_description": "We Will Send You a Link, Open it on Your Phone to download the app",
+    "email": "Email",
+    "shareLink": "Share App Link",
+    "getDeliveries": "Get Deliveries with FreshCart",
+    "partners": "Payment partners",
+    "copyright": "Copy Right 2025 © By M.Ramzy All Rights Reserved"
+  },
+  "login": {
+    "title": "Login Now",
+    "email": "Email",
+    "password": "Password",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordRequired": "Password is required",
+    "passwordUppercase": "Password must start with an uppercase letter.",
+    "passwordLength": "Password must be at least 8 characters long.",
+    "forgotPassword": "Forget Password? Click here",
+    "signIn": "Login"
+  },
+  "register": {
+    "title": "Create Account",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "repassword": "Confirm Password",
+    "phone": "Phone",
+    "nameRequired": "Name is required",
+    "nameMinLength": "Name must be at least 3 characters long.",
+    "nameMaxLength": "Name cannot exceed 20 characters.",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordRequired": "Password is required.",
+    "passwordUppercase": "Password must start with an uppercase letter.",
+    "passwordLength": "Password must be at least 8 characters long.",
+    "repasswordRequired": "Please confirm your password.",
+    "repasswordMismatch": "Passwords do not match.",
+    "phoneRequired": "Phone is required",
+    "phoneInvalid": "Please enter a valid Egyptian phone number.",
+    "phoneLength": "Phone number must be 11 digits long.",
+    "signUp": "Register"
+  },
+  "forgetPassword": {
+    "title": "Forget Password",
+    "email": "Email",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "confirm": "Confirm",
+    "verify": "Verify",
+    "codeRequired": "Code is required",
+    "codeInvalid": "Please check Your email then enter the code.",
+    "newPassword": "New Password",
+    "passwordRequired": "Password is required.",
+    "passwordUppercase": "Password must start with an uppercase letter.",
+    "passwordLength": "Password must be at least 8 characters long.",
+    "repasswordRequired": "Please confirm your password.",
+    "code": "Code"
+  },
+  "cart":{
+  "cartTotal": "Cart Total",
+  "total": "Total:",
+  "proceedToCheckout": "Proceed to checkout",
+  "product": "Product",
+  "price": "Price",
+  "quantity": "Quantity",
+  "subTotal": "SubTotal"
+  },
+  "checkout":{
+    "title": "Checkout",
+    "phone": "Phone",
+    "phoneRequired": "Phone is required.",
+    "phoneInvalid": "Please enter a valid Egyptian phone number.",
+    "phoneLength": "Phone number must be 11 digits long.",
+    "city": "City",
+    "cityRequired": "City is required.",
+    "details": "Details Address",
+    "detailsRequired": "Details are required.",
+    "card": "card",
+    "cash": "Cash"
+  },
+  "orders":{
+    "title": "Your Orders",
+    "orderId": "Order ID ",
+    "date": "Date",
+    "totalPrice": "Total Price",
+    "paymentMethod": "Payment Method",
+    "paymentStatus": "Payment Status",
+    "notPaid": "Not Paid",
+    "Paid": "Paid",
+    "customerInformation": "Customer Information",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "shippingAddress": "Shipping Address",
+    "detailsLabel": "Details:",
+    "orderedProducts": "Ordered Products"
+  },
+  "details":{
+    "sold":"sold",
+    "reviews":"Reviews",
+    "addToCart": "Add to Cart",
+    "category": "Category",
+    "brand": "Brand",
+    "freeDelivery": "Free Delivery In 3 Days",
+    "enterPostalCode": "Enter Your Postal Code To Check Availability",
+    "freeReturn": "30-Day Free Return"
+  },
+  "brands":{
+    "ourBrands": "Our Brands"
+  },
+  "categories":{
+    "ourCategories": "Our Categories"
+  },
+  "products":{
+    "ourProducts": "Our Products",
+    "search": "Search",
+    "add": "Add to cart"
+  }
+
+}

@@ -1,0 +1,177 @@
+<nav class="bg-black fixed w-full py-1 z-50">
+  <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-2 px-4">
+    <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse me-5">
+      <!-- <img src="/images/freshcart-logo.svg" class="h-8" alt="freshcart-logo" /> -->
+      <i class="fa-solid fa-shopping-cart text-[var(--primary-color)] text-2xl"></i>
+      <span class="text-white text-2xl font-bold tracking-wider">FreshCart</span>
+    </a>
+    <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm   rounded-lg cursor-pointer  ">
+        <i class="fas fa-language text-white text-2xl"></i>
+      </button>
+      <!-- Dropdown -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm " id="language-dropdown-menu">
+        <ul class="py-2 font-medium" role="none">
+          <li>
+            <a 
+            (click)="changeLanguage('en')"
+            class="block px-4 py-2 text-sm text-[var(--primary-color)]" role="button">
+              <div class="inline-flex items-center">
+                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd">
+                        <g stroke-width="1pt">
+                        <path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/>
+                        <path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/>
+                    </g>
+                    <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/>
+                    <path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+                English (US)
+              </div>
+            </a>
+          </li>
+          
+          <li>
+            <a 
+            (click)="changeLanguage('ar')"
+            class="block px-4 py-2 text-sm text-[var(--primary-color)]" role="button">
+                <div class="inline-flex items-center">
+                    <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <g fill-rule="evenodd" stroke-width="1pt">
+                            <path fill="#ef3340" d="M0 0h512v170.67H0z"/>
+                            <path fill="#fff" d="M0 170.67h512v170.67H0z"/>
+                            <path fill="#000" d="M0 341.33h512V512H0z"/>
+                            <path fill="#c09300" d="M234 190h44l-5 37c-1 4 2 9 6 9s7-4 6-9l-5-37h44l-5 37c-2 13-10 24-24 28v14h14v10h-48v-10h14v-14c-14-4-22-15-24-28l-5-37z"/>
+                        </g>
+                    </svg>
+                    العربية
+                </div>            
+            </a>
+          </li>
+         
+        </ul>
+      </div>
+      <button data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-language" aria-expanded="false">
+      </button>
+    </div>
+    <button data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:text-[var(--primary-color)] focus:outline-none focus:ring-2 focus:ring-white"
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15" />
+      </svg>
+    </button>
+    <div class="hidden w-full md:flex flex-grow md:w-auto" id="navbar-default">
+
+      @if (isLogin()) {
+      <ul
+        class="font-medium capitalize flex flex-col   p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:items-center md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0">
+        <li >
+          <a class="block py-2 px-3 rounded-sm text-gray-50 hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/home" routerLinkActive="active" aria-current="page">{{'nav.home' | translate}}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-gray-50 hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/products" routerLinkActive="active" aria-current="page">{{'nav.products' | translate}}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/categories" routerLinkActive="active" aria-current="page">{{'nav.categories' | translate}}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/brands" routerLinkActive="active" aria-current="page">{{'nav.brands' | translate}}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/allorders" routerLinkActive="active" aria-current="page">{{'nav.orders' | translate}}</a>
+        </li>
+      </ul>
+      }
+
+
+      <ul
+        class="font-medium capitalize flex flex-col ms-auto p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:items-center  md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0">
+        
+        
+        <li>
+          <a href="#"
+            class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            aria-current="page">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            aria-current="page">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            aria-current="page">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            aria-current="page">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+
+        @if (!isLogin()) {
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/login" routerLinkActive="active" aria-current="page">{{'nav.login' | translate}}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/register" routerLinkActive="active" aria-current="page">{{'nav.register' | translate}}</a>
+        </li>
+        }
+        @else {
+
+        <li>
+          <a class="block relative py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/wishlist" routerLinkActive="active" aria-current="page">
+            <i class="fa-solid fa-heart hover:text-[var(--primary-color)] text-2xl"></i>
+            <span
+              class="absolute -top-2 -right-2 bg-[var(--primary-color)] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              {{countWishlist}}
+            </span>
+
+          </a>
+        </li>
+
+        <li>
+          <a class="block relative py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            routerLink="/cart" routerLinkActive="active" aria-current="page">
+            <i class="fa-solid fa-shopping-cart hover:text-[var(--primary-color)] text-2xl"></i>
+
+            <span
+              class="absolute -top-2 -right-2 bg-[var(--primary-color)] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              {{numOfCartItem}}
+            </span>
+
+          </a>
+        </li>
+
+        <li>
+          <a role="button" (click)="authService.logOut()"
+            class="block py-2 px-3 rounded-sm text-white hover:text-[var(--primary-color)] transition duration-300 ease-in-out  "
+            aria-current="page">{{'nav.logout' | translate}}</a>
+        </li>
+
+        }
+
+
+
+      </ul>
+    </div>
+</div>
+</nav>

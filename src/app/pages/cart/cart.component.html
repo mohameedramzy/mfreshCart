@@ -1,0 +1,86 @@
+
+<div class="max-w-5xl mx-auto p-6">
+    <!-- Table for large screens -->
+    <div class="overflow-x-auto hidden md:block">
+        <table class="w-full border-collapse border border-gray-200">
+            <thead>
+                <tr class="bg-gray-100 text-center">
+                    <th class="p-4">
+                        {{'cart.product' | translate}}
+                    </th>
+                    <th class="p-4">
+                        {{'cart.price' | translate}}
+                    </th>
+                    <th class="p-4">
+                        {{'cart.quantity' | translate}}
+                    </th>
+                    <th class="p-4">
+                        {{'cart.subTotal' | translate}}
+                    </th>
+                </tr>
+            </thead>
+
+            @for (car of cartDetails.products; track  car._id) {
+                <tbody>
+                    <tr class="border-t text-center">
+                        <td class="p-4 flex items-center space-x-4 border-e">
+                            <img [src]="car.product.imageCover" [alt]="car.product.title" class="w-24 h-24 rounded">
+                            <div class="flex flex-col">
+                                <span class="text-lg font-bold mb-7">{{car.product.title}}</span>
+                                <span
+                                role="button"
+                                (click)="removeProduct(car.product._id)"
+                                class="text-start text-[var(--primary-color)] hover:text-[var(--hover-primary-color)]"><i class="fa-solid fa-trash"></i> Remove</span>
+                            </div>
+                        </td>
+                        <td class="p-4 border-e">{{car.price | currency:'GBP'}}  </td>
+                        <td class="p-4 space-x-2 border-e ">
+                            <button (click)="updateCount(car.product.id , car.count - 1 )" class="text-center text-white w-7 h-7  bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] rounded">-</button>
+                            <span class="px-4">{{car.count}} </span>
+                            <button (click)="updateCount(car.product.id , car.count + 1 )" class="text-center text-white w-7 h-7  bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] rounded">+</button>
+                        </td>
+                        <td class="p-4 text-lg">{{car.count * car.price | currency:'GBP'}}</td>
+                    </tr>
+                </tbody>
+            }
+            
+        </table>
+    </div>
+
+     <!-- Responsive Cards for small screens  -->
+    <div class="md:hidden space-y-4">
+        
+@for (car of cartDetails.products; track  car._id) {
+    <div class="border p-4 rounded-lg flex flex-col items-center text-center">
+        <img [src]="car.product.imageCover" [alt]="car.product.title" class="w-24 h-24 rounded mb-2">
+        <h3 class="text-lg font-bold">{{car.product.title}}</h3>
+        <p class="text-gray-700">Price: {{car.price | currency:'GBP'}}</p>
+        
+        <div class="flex items-center space-x-2 mt-2">
+            <button (click)="updateCount(car.product.id , car.count - 1 )" class="text-white w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] rounded">-</button>
+            <span class="px-4 text-lg">{{car.count}}</span>
+            <button (click)="updateCount(car.product.id , car.count + 1 )" class="text-white w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] rounded">+</button>
+        </div>
+
+        <p class="text-lg font-bold mt-2">Total: <span class="text-[var(--primary-color)]">{{car.count * car.price | currency:'GBP'}}</span></p>
+        <span
+                                role="button"
+                                (click)="removeProduct(car.product._id)"
+                                class="text-start text-[var(--primary-color)] hover:text-[var(--hover-primary-color)]"><i class="fa-solid fa-trash"></i> Remove</span>
+    </div>
+    
+}
+    </div>
+
+</div>
+
+    <!-- Cart Total -->
+    <div class="border p-4 rounded-lg mt-6 max-w-sm w-full sm:w-auto mx-auto text-center">
+        <h3 class="text-lg font-bold">
+            {{'cart.cartTotal' | translate}}
+        </h3>
+        <p class="flex justify-between mt-2 font-bold text-2xl"><span> {{'cart.total' | translate }} </span> <span class="text-[var(--primary-color)]">{{cartDetails.totalCartPrice | currency:'GBP'}}</span></p>
+        <button class="w-full mt-4 px-4 py-2 bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] text-white rounded-md"  [routerLink]="['/checkout' , cartDetails._id]">
+            {{'cart.proceedToCheckout' | translate}}
+        </button>
+    </div>

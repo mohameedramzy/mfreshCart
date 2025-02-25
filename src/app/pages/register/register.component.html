@@ -1,0 +1,238 @@
+<section class="w-1/2 mx-auto flex flex-col justify-center space-y-8">
+  <h1 class="text-3xl text-[var(--primary-color)] font-bold tracking-wide text-center capitalize ">
+    {{'register.title' | translate}}
+  </h1>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+
+    <div class="">
+      <label for="name" class="block mb-1 text-sm font-medium text-gray-900">
+        {{'register.name' | translate}}
+      </label>
+      <input formControlName="name" type="text" id="name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5">
+
+
+        @let nameControl = registerForm.get('name');
+
+        @if (nameControl?.errors && nameControl?.touched) {
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 "
+          role="alert">
+          <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (nameControl?.getError('required')) {
+                <li>
+                  {{'register.nameRequired' | translate}}
+                </li>
+              }
+              @else if (nameControl?.getError('minlength')) {
+                <li>
+                  {{'register.nameMinLength' | translate}}
+                </li>
+              }
+              @else if (nameControl?.getError('maxlength')) {
+                <li>
+                  {{'register.nameMaxLength' | translate}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+
+    </div>
+
+
+
+    <div class="">
+      <label for="email" class="block mb-1 text-sm font-medium text-gray-900">
+        {{'register.email' | translate}}
+      </label>
+      <input formControlName="email" type="email" id="email"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5">
+
+        @let emailControl = registerForm.get('email');
+        @if (emailControl?.errors && emailControl?.touched) {
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 "
+          role="alert">
+          <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (emailControl?.getError('required')) {
+                <li>
+                  {{'register.emailRequired' | translate}}
+                </li>
+              }
+              @else if (emailControl?.getError('email')) {
+                <li>
+                  {{'register.emailInvalid' | translate}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+    </div>
+
+
+
+    <div class="">
+      <label for="password" class="block mb-1 text-sm font-medium text-gray-900">
+        {{'register.password' | translate}}
+      </label>
+      <input formControlName="password" type="password" id="password"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5">
+@let passwordControl = registerForm.get('password');
+        @if (passwordControl?.errors && passwordControl?.touched) {
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 "
+          role="alert">
+          <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (passwordControl?.getError('required')) {
+                <li>
+                  {{'register.passwordRequired' | translate}}
+                </li>
+              }
+              @else if (passwordControl?.getError('pattern')) {
+                <li>
+                  {{'register.passwordUppercase' | translate}}
+                </li>
+                <li>
+                  {{'register.passwordLength' | translate}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+    </div>
+
+
+
+    <div class="">
+      <label for="rePassword" class="block mb-1 text-sm font-medium text-gray-900">
+        {{'register.rePassword' | translate}}
+      </label>
+      <input formControlName="rePassword" type="password" id="rePassword"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5">
+
+        @if (registerForm.getError('notSame') && registerForm.get('rePassword')?.touched) {
+
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 "
+          role="alert">
+          <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if ( registerForm.getError('notSame')) {
+                <li>
+                  {{'register.repasswordMismatch' | translate}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        }
+    </div>
+
+
+
+    <div class="">
+      <label for="phone" class="block mb-1 text-sm font-medium text-gray-900">
+        {{'register.phone' | translate}}
+      </label>
+      <input formControlName="phone" type="tel" id="phone"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5">
+@let phoneControl = registerForm.get('phone');
+        @if (phoneControl?.errors && phoneControl?.touched) {
+          <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 "
+          role="alert">
+          <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (phoneControl?.getError('required')) {
+                <li>
+                  {{'register.phoneRequired' | translate}}
+                </li>
+              }
+              @else if (phoneControl?.getError('pattern')) {
+                <li>
+                  {{'register.phoneInvalid' | translate}}
+                </li>
+                <li>
+                  {{'register.phoneLength' | translate}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+    </div>
+
+    @if (msgError) {
+      <div id="alert-additional-content-2 " class="p-4 mb-4 mt-4 text-red-800 border border-red-300 rounded-lg bg-red-50" role="alert">
+        <div class="flex items-center">
+          <svg class="shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="sr-only">Info</span>
+          <h3 class="text-lg font-medium">{{msgError}}</h3>
+        </div>
+      </div>
+    }
+    @if (isSuccess) {
+      <div id="alert-additional-content-2 " class="p-4 mb-4 mt-4 text-green-800 border border-green-300 rounded-lg bg-green-50" role="alert">
+        <div class="flex items-center">
+          <svg class="shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="sr-only">Info</span>
+          <h3 class="text-lg font-medium">{{isSuccess}}</h3>
+        </div>
+      </div>
+    }
+
+    <div class="flex justify-center mt-5">
+      <button  [disabled]="isLoading" type="submit"
+        class="capitalize  text-white text-lg bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] transition-colors duration-300 ease-in-out rounded-lg px-8 py-2.5">
+        {{'register.signUp' | translate}} 
+        @if (isLoading) {
+
+          <span><i class="fas fa-spin fa-spinner"></i></span>
+        }
+      </button>
+    </div>
+
+
+
+  </form>
+
+
+</section>

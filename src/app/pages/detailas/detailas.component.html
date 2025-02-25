@@ -1,0 +1,59 @@
+<section class="max-w-5xl bg-white mx-auto mb-20 p-6 rounded-lg shadow grid  grid-cols-1 md:grid-cols-2 gap-6 capitalize">
+  <!-- Product Images -->
+  <div>
+    <!-- mainImage -->
+    <div class="relative group bg-white">
+      <img class="w-full h-[500px] object-contain rounded-lg transition-colors duration-300 border hover:border-[var(--primary-color)]" 
+           [src]="selectedImage || productDetails.imageCover" 
+           alt="Product Image">
+    </div>
+    
+    <!-- Thumbnails -->
+    <div class="grid grid-cols-4 gap-2 mt-4 mx-auto">
+      @for (image of productDetails.images; track image) {
+        <img class="w-full h-16 md:h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-100 hover:border-[var(--primary-color)]" 
+             [src]="image" 
+             alt="Thumbnail" 
+             (click)="changeMainImage(image)">
+      }
+    </div>
+    
+  </div>
+
+  <!-- Product Details -->
+  <div>
+    <h2 class="text-3xl font-bold text-[var(--primary-color)]">{{ productDetails.title }}</h2>
+
+    <!-- Rating & Sold Count -->
+    <div class="flex items-center mt-2 flex-wrap">
+      <span class="text-yellow-500 text-lg">⭐</span>
+      <span class="text-gray-500 ml-2">{{ productDetails.ratingsAverage }} ({{ productDetails.ratingsQuantity }} {{'details.reviews' | translate}})</span>
+      <span class="ml-auto text-green-600 font-medium">{{ productDetails.sold }}+ {{'details.sold' | translate}}</span>
+    </div>
+
+    <!-- Price -->
+    <p class="text-2xl font-semibold mt-4 text-[var(--primary-color)]">{{ productDetails.price | currency:'GBP'}}  </p>
+    <p class="text-gray-600 mt-2">{{ productDetails.description }}</p>
+
+    <!-- Category & Brand -->
+    <div class="mt-4">
+      <p class="text-gray-800 font-medium"> {{'details.category' | translate}}: <span class="text-blue-500">{{ productDetails.category.name }}</span></p>
+      <p class="text-gray-800 font-medium"> {{'details.brand' | translate}}: <span class="text-blue-500">{{ productDetails.brand.name }}</span></p>
+    </div>
+
+    <!-- Quantity Selection -->
+    <div class="mt-6 flex justify-center items-center">
+
+      <button              
+      (click)="addToCart(productDetails.id)"
+      class="px-6 py-2 bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] transition-colors duration-300 text-white rounded-md w-full md:w-auto">Add to Cart</button>
+    </div>
+
+    <!-- Delivery Information -->
+    <div class="mt-6 border-t pt-4 text-sm">
+      <p class="flex items-center"><span class="text-lg">🚚</span> <span>{{'details.freeDelivery' | translate}}</span></p>
+      <p class="text-gray-600">{{'details.enterPostalCode' | translate}}</p>
+      <p class="mt-2 flex items-center"><span class="text-lg">🔄</span> <span>{{'details.freeReturn' | translate}}</span></p>
+    </div>
+  </div>
+</section>

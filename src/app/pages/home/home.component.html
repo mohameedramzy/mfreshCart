@@ -1,0 +1,146 @@
+
+<!-- mainSlider -->
+<section class="mb-20 px-4 md:px-14">
+  <div class="grid grid-cols-1 md:grid-cols-[70%_minmax(0,1fr)] gap-2">
+    <!-- الصور الرئيسية -->
+    <div>
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img src="/images/img1.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img2.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img3.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img4.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img5.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img6.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/screen1.png" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/img7.avif" alt="" class="w-full  h-[200px] md:h-[360px] ">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img src="/images/slider01.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/slider02.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/slider03.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+      </owl-carousel-o>
+
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img src="/images/screen2.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/screen3.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/slider06.jpg" alt="" class="w-full  h-[200px] md:h-[175px] ">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+
+<!-- categoriesSlider -->
+<section class="mb-20">
+
+  <p class="text-[var(--primary-color)] text-lg font-bold main-text relative mb-5">{{'home.ourCategories' | translate}}</p>
+
+  <owl-carousel-o [options]="customOptions">
+    @for (cat of categories; track cat._id){
+    <ng-template carouselSlide>
+      <div class="border mx-3 ">
+        <img [src]="cat.image" [alt]="cat.name" class="w-full h-[250px] object-contain" />
+        <p class="text-center tracking-wide text-lg font-bold py-4 text-[var(--primary-color)] ">{{cat.name}}</p>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+
+</section>
+
+<!-- partOfProduct -->
+<section class="mb-20">
+
+  <p class="text-[var(--primary-color)] text-lg font-bold main-text relative mb-5">{{'home.ourProducts' | translate}}</p>
+  <p class="text-lg mb-5 font-medium">{{'home.exploar' | translate}}</p>
+  <div class="mb-20 flex flex-row justify-center">
+    <span   class="bg-gray-50 border  me-2  border-green-600 text-gray-900 text-lg rounded-lg focus:ring-green-600 focus:border-green-600 block px-10 py-2.5">
+      {{'home.search' | translate}}
+    </span>
+    <input type="text"
+    [(ngModel)]="nameProduct"
+    class="bg-gray-50 border w-1/2  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block p-2.5">
+   </div>
+  <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    @for (prod of products.slice(0,12) | search : nameProduct; track prod.id)
+    {
+      <div  class="w-full card bg-white border rounded-lg shadow overflow-hidden relative scroll-animation show" appScrollAnimation  >
+        <div [routerLink]="['/detailas' , prod._id]" class="overflow-hidden">
+          <a role="button" >
+            <img class="w-full h-[250px] object-contain rounded-t-lg" 
+                 [src]="prod.imageCover" 
+                 [alt]="prod.title" />
+          </a>
+        </div>
+        <div class="px-5 pb-5">
+          <h6  class="text-sm font-semibold tracking-tight text-gray-500">{{ prod.category.name }}</h6>
+          <h5 role="button" [routerLink]="['/detailas' , prod._id]"  class="text-xl font-semibold tracking-tight text-black">
+            {{ prod.title.split(' ', 2).join(' ') }}
+          </h5>
+          <div class="flex justify-between items-center text-lg mt-2.5 mb-5">
+            <span class="text-2xl font-bold text-[var(--primary-color)]">{{ prod.price  | currency:'GBP'}} </span>
+            <div>
+              <i class="fa-solid fa-star text-yellow-400">
+                <span class="text-gray-400 text-lg font-semibold px-2.5 py-0.5 rounded-sm ms-3">
+                  {{ prod.ratingsAverage }}
+                </span>
+              </i>
+            </div>
+          </div>
+          <button 
+          (click)="addToWishlist(prod.id)"
+          class="absolute top-3 right-3 bg-white rounded-full shadow p-3 text-gray-500 hover:text-[var(--hover-primary-color)] transition">
+          <i class="fa-solid fa-heart text-xl" [ngClass]="{'text-[var(--primary-color)]': wishlist.includes(prod.id)}"></i>
+        </button>
+        
+          <div class="flex items-center justify-between">
+            <button
+            (click)="addToCart(prod.id)"
+            class="w-full text-white bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] transition-colors duration-300 ease-in-out font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            {{'home.add' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+  
+  <div class="flex justify-center mt-10">
+    <button class="capitalize text-white text-lg bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] transition-colors duration-300 ease-in-out rounded-lg px-8 py-2.5"
+            routerLink="/products" 
+            routerLinkActive="text-[var(--primary-color)]">
+            {{'home.view' | translate}}
+    </button>
+  </div>
+</section>

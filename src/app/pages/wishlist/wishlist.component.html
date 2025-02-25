@@ -1,0 +1,45 @@
+<section class="mb-20">
+  <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    @for (prod of products.slice(0,12) ; track prod.id)
+    {
+      <div  class="w-full card bg-white border rounded-lg shadow overflow-hidden relative scroll-animation show" appScrollAnimation  >
+        <div [routerLink]="['/detailas' , prod._id]" class="overflow-hidden">
+          <a role="button" >
+            <img class="w-full h-[250px] object-contain rounded-t-lg" 
+                 [src]="prod.imageCover" 
+                 [alt]="prod.title" />
+          </a>
+        </div>
+        <div class="px-5 pb-5">
+          <h6  class="text-sm font-semibold tracking-tight text-gray-500">{{ prod.category.name }}</h6>
+          <h5 role="button" [routerLink]="['/detailas' , prod._id]"  class="text-xl font-semibold tracking-tight text-black">
+            {{ prod.title.split(' ', 2).join(' ') }}
+          </h5>
+          <div class="flex justify-between items-center text-lg mt-2.5 mb-5">
+            <span class="text-2xl font-bold text-[var(--primary-color)]">{{ prod.price }} EGP</span>
+            <div>
+              <i class="fa-solid fa-star text-yellow-400">
+                <span class="text-gray-400 text-lg font-semibold px-2.5 py-0.5 rounded-sm ms-3">
+                  {{ prod.ratingsAverage }}
+                </span>
+              </i>
+            </div>
+          </div>
+          <button 
+          (click)="removeFromWishlist(prod.id)"
+          class="absolute top-3 right-3 bg-white rounded-full shadow p-3 text-gray-500 hover:text-[var(--hover-primary-color)] transition">
+          <i class="fa-solid fa-heart text-xl text-[var(--primary-color)]" ></i>
+        </button>
+        
+          <div class="flex items-center justify-between">
+            <button
+            (click)="addToCart(prod.id)"
+            class="w-full text-white bg-[var(--primary-color)] hover:bg-[var(--hover-primary-color)] transition-colors duration-300 ease-in-out font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
