@@ -32,9 +32,10 @@ submitForm():void{
   this.authService.sendloginForm(this.loginForm.value).subscribe({
     next: (res) => {
     this.isLoading = false;
-
+console.log(res);
     setTimeout(() => {
       localStorage.setItem('token', res.token);
+      localStorage.setItem('id' ,res.user.id);
       this.authService.getUserData();
       this.router.navigate(['/home']);
     }, 1000);
