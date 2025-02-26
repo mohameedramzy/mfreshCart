@@ -29,6 +29,8 @@ export class AuthService {
   getUserData():void{
     this.userToken = jwtDecode(localStorage.getItem('token')!);
     console.log(this.userToken);
+    localStorage.setItem('id' ,this.userToken.id);
+
   }
 
 
