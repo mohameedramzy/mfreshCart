@@ -6,7 +6,7 @@ import { BlankLayoutComponent } from './layouts/blank-layout/blank-layout.compon
 import { authGuard } from './core/guards/auth/auth.guard';
 import { homeLoggedGuard } from './core/guards/home-logged/home-logged.guard';
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   { path: '', component: AuthLayoutComponent ,
     children: [
