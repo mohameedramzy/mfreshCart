@@ -35,7 +35,7 @@ submitForm():void{
 console.log(res);
     setTimeout(() => {
       localStorage.setItem('token', res.token);
-      localStorage.setItem('id' ,res.user.id);
+      localStorage.setItem('id' ,res.id);
       this.authService.getUserData();
       this.router.navigate(['/home']);
     }, 1000);
