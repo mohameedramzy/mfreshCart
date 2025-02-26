@@ -6,7 +6,7 @@ import { BlankLayoutComponent } from './layouts/blank-layout/blank-layout.compon
 import { authGuard } from './core/guards/auth/auth.guard';
 import { homeLoggedGuard } from './core/guards/home-logged/home-logged.guard';
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
 
   { path: '', component: AuthLayoutComponent ,
     children: [
@@ -65,9 +65,9 @@ export const routes: Routes = [
     path: 'checkout/:id', 
     loadComponent: () => import('./pages/checkout/checkout.component').then(m => m.CheckoutComponent),
     title: 'checkout',
-    canActivate: [authGuard],  // Require login for products
+    canActivate: [authGuard]  // Require login for products
     
-  data: { renderMode: 'default' }
+  
   },
     {
     path: 'allorders', 
@@ -85,8 +85,7 @@ export const routes: Routes = [
       path: 'detailas/:id', 
       loadComponent: () => import('./pages/detailas/detailas.component').then(m => m.DetailasComponent),
       title: 'detailas',
-      canActivate: [authGuard],  // Require login for products
-      data: { renderMode: 'default' }
+      canActivate: [authGuard]  // Require login for products
     },
     { 
       path: '**', 

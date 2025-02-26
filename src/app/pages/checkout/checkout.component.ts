@@ -54,7 +54,9 @@ submitPaymentOnline():void{
   this.ordersService.checkoutPaymentOnline(this.cartId , this.checkOutForm.value).subscribe({
     next: (res)=>{
 if(res.status == 'success'){
+
 open(res.session.url , '_self')
+console.log(res);
 }
 
     },
